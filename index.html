@@ -1,16 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Number Guessing Game</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Animal 360° View Demo with Info</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    text-align: center;
+    margin: 20px;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  .animal-container {
+    display: inline-block;
+    margin: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    width: 320px;
+  }
+  .animal-name {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .animal-info {
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0 15px 0;
+    min-height: 60px;
+  }
+  img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 6px;
+  }
+  .slider-controls {
+    margin-top: 10px;
+  }
+  button {
+    padding: 6px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  button:hover {
+    background: #0056b3;
+  }
+</style>
 </head>
 <body>
-  <h1>Number Guessing Game</h1>
-  <p>1 se 100 ke beech number guess karo</p>
-  <input type="number" id="guessInput" placeholder="Enter number">
-  <button onclick="checkGuess()">Guess</button>
-  <p id="result"></p>
 
-  <script src="script.js"></script>
+<h1>Animal 360° View Demo with Information</h1>
+
+<div class="animal-container" id="lion-container">
+  <div class="animal-name">Lion</div>
+  <div class="animal-info" id="lion-info">
+    The lion is known as the king of the jungle. It lives in groups called prides.
+  </div>
+  <img id="lion-image" src="https://i.imgur.com/YzG8mM8_1.jpg" alt="Lion 360° View" />
+  <div class="slider-controls">
+    <button onclick="changeImage('lion', -1)">Previous</button>
+    <button onclick="changeImage('lion', 1)">Next</button>
+  </div>
+</div>
+
+<div class="animal-container" id="elephant-container">
+  <div class="animal-name">Elephant</div>
+  <div class="animal-info" id="elephant-info">
+    Elephants are the largest land animals and have a highly developed brain.
+  </div>
+  <img id="elephant-image" src="https://i.imgur.com/cIXbK28_1.jpg" alt="Elephant 360° View" />
+  <div class="slider-controls">
+    <button onclick="changeImage('elephant', -1)">Previous</button>
+    <button onclick="changeImage('elephant', 1)">Next</button>
+  </div>
+</div>
+
+<div class="animal-container" id="tiger-container">
+  <div class="animal-name">Tiger</div>
+  <div class="animal-info" id="tiger-info">
+    Tigers are powerful predators with distinctive orange and black stripes.
+  </div>
+  <img id="tiger-image" src="https://i.imgur.com/6TYBTTI_1.jpg" alt="Tiger 360° View" />
+  <div class="slider-controls">
+    <button onclick="changeImage('tiger', -1)">Previous</button>
+    <button onclick="changeImage('tiger', 1)">Next</button>
+  </div>
+</div>
+
+<script>
+  // Sample 4 images per animal (replace URLs with real 360 images if available)
+  const animalImages = {
+    lion: [
+      "https://i.imgur.com/YzG8mM8_1.jpg",
+      "https://i.imgur.com/YzG8mM8_2.jpg",
+      "https://i.imgur.com/YzG8mM8_3.jpg",
+      "https://i.imgur.com/YzG8mM8_4.jpg"
+    ],
+    elephant: [
+      "https://i.imgur.com/cIXbK28_1.jpg",
+      "https://i.imgur.com/cIXbK28_2.jpg",
+      "https://i.imgur.com/cIXbK28_3.jpg",
+      "https://i.imgur.com/cIXbK28_4.jpg"
+    ],
+    tiger: [
+      "https://i.imgur.com/6TYBTTI_1.jpg",
+      "https://i.imgur.com/6TYBTTI_2.jpg",
+      "https://i.imgur.com/6TYBTTI_3.jpg",
+      "https://i.imgur.com/6TYBTTI_4.jpg"
+    ]
+  };
+
+  // Current image index tracker
+  const currentIndex = {
+    lion: 0,
+    elephant: 0,
+    tiger: 0
+  };
+
+  function changeImage(animal, direction) {
+    const images = animalImages[animal];
+    currentIndex[animal] += direction;
+
+    // Loop around if out of bounds
+    if (currentIndex[animal] < 0) {
+      currentIndex[animal] = images.length - 1;
+    } else if (currentIndex[animal] >= images.length) {
+      currentIndex[animal] = 0;
+    }
+
+    // Change image source
+    const imgElement = document.getElementById(animal + '-image');
+    imgElement.src = images[currentIndex[animal]];
+  }
+</script>
+
 </body>
 </html>
