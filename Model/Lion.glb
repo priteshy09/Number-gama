@@ -1,0 +1,10 @@
+<model-viewer 
+  src="Lion.glb" 
+  alt="A 3D model of a Lion"
+  auto-rotate 
+  camera-controls 
+  ar 
+  shadow-intensity="1"
+  exposure="1"
+  interaction-prompt="none">
+</model-viewer>
