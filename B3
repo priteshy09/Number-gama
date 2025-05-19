@@ -1,0 +1,47 @@
+import { useState } from "react"; import { Input } from "@/components/ui/input"; import { Card, CardContent } from "@/components/ui/card"; import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"; import { motion } from "framer-motion";
+
+const images = [ { title: "Eiffel Tower", category: "Cities", src: "https://source.unsplash.com/featured/?eiffeltower", }, { title: "Mountains", category: "Nature", src: "https://source.unsplash.com/featured/?mountains", }, { title: "New York", category: "Cities", src: "https://source.unsplash.com/featured/?newyork", }, { title: "AI Art Lion", category: "AI", src: "https://source.unsplash.com/featured/?lion,ai", }, { title: "Taj Mahal", category: "Monuments", src: "https://source.unsplash.com/featured/?tajmahal", }, ];
+
+export default function GlobalImages() { const [search, setSearch] = useState(""); const [filter, setFilter] = useState("All");
+
+const filtered = images.filter( (img) => (filter === "All" || img.category === filter) && img.title.toLowerCase().includes(search.toLowerCase()) );
+
+return ( <div className="p-6 max-w-screen-xl mx-auto"> <h1 className="text-4xl font-bold mb-4 text-center"> Duniya Ki Tasveerein </h1>
+
+<Input
+    placeholder="Search images..."
+    className="mb-4"
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+  />
+
+  <Tabs defaultValue="All" className="mb-6" onValueChange={setFilter}>
+    <TabsList>
+      <TabsTrigger value="All">All</TabsTrigger>
+      <TabsTrigger value="Nature">Nature</TabsTrigger>
+      <TabsTrigger value="Cities">Cities</TabsTrigger>
+      <TabsTrigger value="Monuments">Monuments</TabsTrigger>
+      <TabsTrigger value="AI">AI Images</TabsTrigger>
+    </TabsList>
+  </Tabs>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {filtered.map((img, i) => (
+      <motion.div
+        key={i}
+        whileHover={{ scale: 1.05 }}
+        className="rounded-2xl shadow-lg overflow-hidden"
+      >
+        <Card>
+          <CardContent className="p-0">
+            <img src={img.src} alt={img.title} className="w-full h-64 object-cover" />
+            <div className="p-2 text-center font-semibold">{img.title}</div>
+          </CardContent>
+        </Card>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
+); }
+
