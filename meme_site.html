@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meme Uploader</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; background: #f4f4f4; }
+    h1 { text-align: center; }
+    form { margin-bottom: 20px; background: white; padding: 20px; border-radius: 10px; }
+    input[type="text"], input[type="file"] {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+      padding: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .meme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .meme {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .meme img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Meme Uploader</h1>
+  <form id="memeForm">
+    <input type="text" id="caption" placeholder="Enter caption" required />
+    <input type="file" id="image" accept="image/*" required />
+    <button type="submit">Upload Meme</button>
+  </form>
+  <div class="meme-grid" id="memeGrid"></div>  <script>
+    const memeForm = document.getElementById('memeForm');
+    const memeGrid = document.getElementById('memeGrid');
+
+    memeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const caption = document.getElementById('caption').value;
+      const imageFile = document.getElementById('image').files[0];
+
+      if (imageFile) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const memeDiv = document.createElement('div');
+          memeDiv.className = 'meme';
+          memeDiv.innerHTML = `<img src="${e.target.result}" alt="Meme"><p>${caption}</p>`;
+          memeGrid.prepend(memeDiv);
+          memeForm.reset();
+        }
+        reader.readAsDataURL(imageFile);
+      }
+    });
+  </script></body>
+</html>
