@@ -1,150 +1,35 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+// सर्च फीचर
+function searchKnowledge() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.category-card');
+    cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? 'block' : 'none';
+    });
 }
 
-body {
-    background-color: #f0f2f5;
-    color: #333;
-}
-
-header {
-    background-color: #1a1a2e;
-    color: white;
-    padding: 1.5rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.search-bar {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.search-bar input {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px;
-    width: 200px;
-}
-
-.search-bar button {
-    padding: 0.5rem 1rem;
-    background-color: #e94560;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-bar button:hover {
-    background-color: #d32f2f;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-nav ul li a:hover {
-    color: #00d4ff;
-}
-
-section {
-    padding: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-#home {
-    text-align: center;
-    background: linear-gradient(135deg, #00d4ff, #90caf9);
-    color: white;
-    padding: 4rem;
-    border-radius: 10px;
-}
-
-#categories {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.category-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.category-card {
-    background-color: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-.category-card:hover {
-    transform: translateY(-5px);
-}
-
-#stats {
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-.chart-container {
-    max-width: 600px;
-    margin: 2rem auto;
-}
-
-#about {
-    text-align: center;
-    background-color: white;
-    border-radius: 10px;
-}
-
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #1a1a2e;
-    color: white;
-}
-
-/* रिस्पॉन्सिव डिज़ाइन */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 1rem;
+// शिक्षा का चार्ट
+const ctx = document.getElementById('educationChart').getContext('2d');
+const educationChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['भारत', 'अमेरिका', 'चीन', 'जापान'],
+        datasets: [{
+            label: 'साक्षरता दर (%)',
+            data: [74, 99, 97, 99],
+            backgroundColor: ['#e94560', '#00d4ff', '#f4a261', '#2a9d8f'],
+            borderColor: ['#d32f2f', '#0288d1', '#e67e22', '#1a3c34'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100
+            }
+        }
     }
+});
 
-    .search-bar input {
-        width: 100%;
-    }
-
-    section {
-        padding: 1.5rem;
-    }
-      }
+console.log("Knowledge of Humanity लोड हो गया!");
