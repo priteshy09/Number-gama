@@ -2,90 +2,134 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f4f4f4;
+    background-color: #f0f2f5;
     color: #333;
 }
 
 header {
-    background-color: #2c3e50;
+    background-color: #1a1a2e;
     color: white;
-    padding: 1rem;
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #d32f2f;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 nav ul li a:hover {
-    color: #3498db;
+    color: #00d4ff;
 }
 
 section {
-    padding: 2rem;
+    padding: 3rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 #home {
     text-align: center;
-    background-color: #3498db;
+    background: linear-gradient(135deg, #00d4ff, #90caf9);
     color: white;
-    padding: 3rem;
+    padding: 4rem;
+    border-radius: 10px;
 }
 
-#countries {
+#categories {
     background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.country-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
-.country-card {
-    background-color: #ecf0f1;
-    padding: 1rem;
+.category-card {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
     border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+#stats {
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.chart-container {
+    max-width: 600px;
+    margin: 2rem auto;
 }
 
 #about {
     text-align: center;
-    background-color: #ecf0f1;
+    background-color: white;
+    border-radius: 10px;
 }
 
 footer {
     text-align: center;
-    padding: 1rem;
-    background-color: #2c3e50;
+    padding: 1.5rem;
+    background-color: #1a1a2e;
     color: white;
 }
 
@@ -96,7 +140,11 @@ footer {
         gap: 1rem;
     }
 
-    .country-card {
+    .search-bar input {
         width: 100%;
+    }
+
+    section {
+        padding: 1.5rem;
     }
 }
