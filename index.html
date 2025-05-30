@@ -30,7 +30,17 @@ header {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.logo {
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container img {
+  height: 40px;
+}
+
+.logo-text {
   font-size: 1.8rem;
   font-weight: 800;
   background: linear-gradient(90deg, #8f00ff, #00b7ff);
@@ -138,7 +148,10 @@ footer {
 </head>
 <body>
   <header>
-    <div class="logo">Scolo AI</div>
+    <div class="logo-container">
+      <img src="logo.png" alt="Scolo AI Logo">
+      <div class="logo-text">Scolo AI</div>
+    </div>
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
@@ -160,4 +173,4 @@ footer {
     <p>&copy; 2025 Scolo AI. All rights reserved.</p>
   </footer>
 </body>
-      </html>
+</html>
