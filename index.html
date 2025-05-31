@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Scolo AI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
@@ -9,141 +10,153 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }body, html {
-  height: 100%;
-  font-family: 'Inter', sans-serif;
-  color: white;
-  overflow-x: hidden;
-  background-color: #0e0e11;
-}
-
-header {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-container img {
-  height: 40px;
-}
-
-.logo-text {
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #8f00ff, #00b7ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-nav a {
-  color: #ddd;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: white;
-}
-
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 5;
-  padding: 0 20px;
-}
-
-.video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: 0;
-  filter: brightness(0.4);
-}
-
-.hero-content {
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #8f00ff, #00b7ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-  max-width: 600px;
-  margin: 20px auto;
-  font-size: 1.2rem;
-  color: #ccc;
-}
-
-.hero .btn {
-  background: linear-gradient(to right, #8f00ff, #00b7ff);
-  color: white;
-  padding: 14px 30px;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.hero .btn:hover {
-  opacity: 0.85;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #777;
-  background: #0e0e11;
-}
-
-@media(max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-    background: rgba(0,0,0,0.8);
-    padding: 10px;
-    border-radius: 10px;
-  }
-}
-
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      background-color: #0e0e11;
+    }
+    header {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-container img {
+      height: 40px;
+    }
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #8f00ff, #00b7ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: white;
+    }
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 5;
+      padding: 0 20px;
+    }
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.4);
+    }
+    .hero-content {
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #8f00ff, #00b7ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 20px auto;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    .hero .btn {
+      background: linear-gradient(to right, #8f00ff, #00b7ff);
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero .btn:hover {
+      opacity: 0.85;
+    }
+    .content-section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .content-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #8f00ff, #00b7ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .content-section p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .feature-box {
+      background: #1a1a1f;
+      padding: 20px;
+      border-radius: 12px;
+      color: #ddd;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+      background: #0e0e11;
+    }
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(0,0,0,0.8);
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -160,7 +173,9 @@ footer {
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-  </header>  <section class="hero">
+  </header>
+
+  <section class="hero">
     <video class="video-bg" autoplay muted loop>
       <source src="https://cdn.coverr.co/videos/coverr-ai-chip-technology-2962/1080p.mp4" type="video/mp4">
     </video>
@@ -169,7 +184,35 @@ footer {
       <p>Unlock intelligence for your enterprise by harnessing the full potential of AI and structured data at scale.</p>
       <button class="btn">Get Started</button>
     </div>
-  </section>  <footer>
+  </section>
+
+  <section class="content-section">
+    <h2>About Scolo AI</h2>
+    <p>Scolo AI is a next-generation AI-powered platform built to revolutionize the way you interact with technology. Whether you're seeking intelligent assistance, automation, or cutting-edge AI tools, Scolo is your all-in-one solution. We believe in simplicity, speed, and smart innovation.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Our Mission</h2>
+    <p>To immortalize every human imagination through visuals. Scolo AI redefines art, storytelling, and creativity for the future of humanity. Our platform is designed for speed, simplicity, and intelligence.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Our Vision</h2>
+    <p>To empower the world with a unified AI ecosystem that is smart, secure, and beautifully designed. Scolo isn't just a product — it's the future of digital interaction.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>What Makes Scolo AI Different?</h2>
+    <div class="features-list">
+      <div class="feature-box">⚡ Blazing-fast AI performance</div>
+      <div class="feature-box">🔒 Privacy-first architecture</div>
+      <div class="feature-box">🎨 Modern and intuitive design</div>
+      <div class="feature-box">🛠 All-in-one platform: chatbots, AI tools, cloud storage, crypto & more</div>
+      <div class="feature-box">🌐 Accessible Anywhere, Anytime</div>
+    </div>
+  </section>
+
+  <footer>
     <p>&copy; 2025 Scolo AI. All rights reserved.</p>
   </footer>
 </body>
